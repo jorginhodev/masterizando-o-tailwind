@@ -14,6 +14,7 @@ import { Logo } from '@/components/logo'
 
 import { NavItem } from './nav-item'
 import { UsedSpaceWidget } from './used-space-widget'
+import { Profile } from './profile'
 
 export const Sidebar = () => {
   return (
@@ -45,6 +46,10 @@ export const Sidebar = () => {
         </nav>
 
         <UsedSpaceWidget />
+
+        <div className="h-px bg-zinc-200" />
+
+        <Profile />
       </div>
     </aside>
   )
