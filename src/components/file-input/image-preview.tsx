@@ -8,7 +8,7 @@ export const ImagePreview = () => {
   const { files } = useFileInput()
 
   const previewURL = useMemo(() => {
-    if (!files || files?.length === 0) {
+    if (files?.length === 0) {
       return null
     }
 

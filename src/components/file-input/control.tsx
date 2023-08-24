@@ -6,7 +6,7 @@ import { useFileInput } from './root'
 
 type RootProps = ComponentProps<'input'>
 
-export const Control = (props: RootProps) => {
+export const Control = ({ multiple = false, ...props }: RootProps) => {
   const { id, onFilesSelected } = useFileInput()
 
   function handleFilesSelected(event: ChangeEvent<HTMLInputElement>) {
@@ -16,7 +16,7 @@ export const Control = (props: RootProps) => {
 
     const files = Array.from(event.target.files)
 
-    onFilesSelected && onFilesSelected(files)
+    onFilesSelected(files, multiple)
   }
 
   return (
@@ -25,6 +25,7 @@ export const Control = (props: RootProps) => {
       className="sr-only"
       id={id}
       onChange={handleFilesSelected}
+      multiple={multiple}
       {...props}
     />
   )
