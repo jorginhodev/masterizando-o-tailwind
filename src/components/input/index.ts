@@ -1,1 +1,1 @@
-export { InputControl, InputPrefix, InputRoot } from './input'
+export { Control, Prefix, Root } from './input'
